@@ -1,0 +1,19 @@
+class Animal:
+    def __init__(self,name,sound):
+        self.name=name
+        self.sound=sound
+
+class Dog(Animal):
+    def fetch(self, thing):
+     self.thing=thing
+     print(f"{self.name} is fetching the {thing}!")
+
+class Cat(Animal):
+    def purr(self):
+        print(f"{self.name} is purring... Purrrrr 🐱")
+
+t=Animal("bruno","bhow-bhow")
+d=Dog("marry","woo")
+d.fetch("apple")
+c=Cat("kitty","meow")
+c.purr()

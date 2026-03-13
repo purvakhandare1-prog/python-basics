@@ -1,0 +1,20 @@
+
+def check(func):
+    def wrapper(*args,**kwargs):
+        if args[0]%2==0:
+          
+          func(*args,**kwargs)
+          
+        else:
+         print("❌ Odd number nahi chalega!")
+    
+    return wrapper
+
+@check
+def evenorodd(a):
+    return a
+
+evenorodd(8)    # even
+evenorodd(7)    # odd
+evenorodd(10)   # even
+evenorodd(3)

@@ -1,16 +1,30 @@
-def decorator(func):
-    def wrapper(*args,**kwargs):
-        if args[0]<0:
-            print("negative")
-        elif args[0]>100:
-            print("❌ Marks 100 se zyada nahi ho sakte!")
-        else:
-            func(*args,**kwargs)
-    return wrapper        
 
-@decorator
-def check(args):
-    print("your output is:")
-           
-check(1003)
+def check_balance(func):
+     def wrapper(*args,**kwargs):
+          if args[0]<0:
+               print("invalid amount")
+          else:
+               func(*args,**kwargs)
+     return wrapper
+
+
+def check_pin(func):
+     def wrapper(*args,**kwargs):
+          if args[1]!="1234":
+               print("invalid")
+          else:
+               func(*args,**kwargs)
+     return wrapper
+
+@check_balance
+@check_pin
+def withdraw(money,pin):
+     print("your output is") 
+
+
+
+
+withdraw(-99999,"1111")
+
+
             

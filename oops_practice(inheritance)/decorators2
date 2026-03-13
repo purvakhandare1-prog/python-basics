@@ -1,0 +1,11 @@
+def greet(func):
+    def wrapper(*args, **kwargs):  # ← ye ZAROOR banana hai
+     print("hi !good morning")
+     return func(*args,**kwargs) 
+    return wrapper
+@greet
+def add(a,b):
+    print(a+b)
+
+add(4,3)
+add(9,3)

@@ -1,0 +1,35 @@
+# inheritance 
+class OTTsubscription:
+    def __init__(self,subscription_id,plan,Total_payment):
+        self.subscription_id=subscription_id
+        self.plan=plan
+        self.Total_payment=Total_payment
+        print(f"the subscription Id is {self.subscription_id}")
+        print (f"the plan is {self.plan}")
+        print(f"the Total_payment is:{self.Total_payment}")
+
+    def subscribe(self,person):
+        self.person=person
+        print(f"your total subscribers are{self.person}")
+
+    def unsubscribed(self,button):
+        self.button=button
+        if self.button==True:
+         print("you are subscribed")
+        else:
+           print("not subscribed yet!")
+
+class Premium_subscription(OTTsubscription):
+    def __init__(self,subscription_id, plan, Total_payment,screens):
+            super().__init__(subscription_id,plan,Total_payment)
+            self.max_screens=screens
+
+        
+    def set_max_screens(self, screens):
+        self.max_screens = screens
+        print(f"maximum screen set to {self.max_screens} in the Premium Plan")
+
+netflix=Premium_subscription(123,"active",4599,4666)
+netflix.subscribe(7)
+netflix.unsubscribed(False)
+netflix.set_max_screens(4)

@@ -1,0 +1,129 @@
+# Ek online shopping website hai jaise Amazon
+
+# Usme 3 types ke sellers hain:
+# ├── ElectronicsSeller  
+# ├── ClothingSeller    
+# └── FoodSeller        
+
+# Teeno ko yeh ZAROOR karna hai:
+# ├── listProduct()   → product list karna
+# ├── calculatePrice() → price calculate karna  
+# └── deliver()       → delivery karna
+
+# Extra cheezein:
+# ├── ElectronicsSeller → warranty() bhi deta hai
+# ├── ClothingSeller    → returnPolicy() bhi hai
+# └── FoodSeller        → expiryCheck() bhi karta hai
+
+# Aur ek common method jo 
+# teeno use kar sakte hain:
+# └── generateBill()  → "Bill generate ho raha hai!"
+
+
+
+
+from abc import ABC, abstractmethod
+
+class Online_shopping_website(ABC):
+    @abstractmethod
+    def listProduct(self):
+        pass
+    
+    
+    @abstractmethod
+    def  calculatePrice(self):
+        pass
+
+    @abstractmethod
+    def deliver(self):
+        pass
+
+
+    def generateBill(self):
+      print("Bill generate ho raha hai!")
+
+class ElectronicsSeller(Online_shopping_website):
+    def listProduct(self):
+        items = ["Mobile", "Laptop", "TV"]
+        print("products:",items)
+
+
+   
+    def calculatePrice(self):
+         price = [3333, 455433, 6644444]
+         print("Prices:", price)
+
+        
+
+    def deliver(self):
+        print("expected delivery from date of purchase to 3 days")
+  
+    def warranty(self):
+        print("4 years of warranty")
+
+
+class ClothingSeller(Online_shopping_website):
+
+
+    def listProduct(self):
+        items = ["western", "indian", "traditional"]
+        print("products:",items)
+
+
+   
+    def calculatePrice(self):
+         price = [4443, 55433, 66444]
+         print("Prices:", price)
+
+        
+
+    def deliver(self):
+        print("expected delivery from date of purchase to 3 days")
+  
+    def returnPolicy(self):
+        print("10 days of return ")
+
+
+class FoodSeller(Online_shopping_website):
+    def listProduct(self):
+        items = ["pizza", "burger", "dal chawal"]
+        print("products:",items)
+
+
+   
+    def calculatePrice(self):
+         price = [543, 123, 678]
+         print("Prices:", price)
+
+        
+
+    def deliver(self):
+        print("expected delivery from 10 minutes from order")
+
+
+    def expiryCheck(self):
+        print("food is not expired yet")
+
+
+a=ElectronicsSeller()
+a.listProduct()
+a.calculatePrice()
+a.deliver()
+a.generateBill()
+b=ClothingSeller()
+b.listProduct()
+b.calculatePrice()
+b.deliver()
+b.generateBill()
+c=FoodSeller()
+c.listProduct()
+c.calculatePrice()
+c.deliver()
+c.generateBill()
+
+
+
+
+
+
+        
